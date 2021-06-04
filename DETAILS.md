@@ -3,7 +3,10 @@
 Building the system is pretty straightforward. You need to make sure to do the following:
 1. Clone or download the repo.
 2. Install the necessary board definitions for the Trinket M0 or Neo Trinket. Check the Adafruit
-website for instructions for your board.
+website for instructions for your board:
+[Neo Trinket](https://learn.adafruit.com/adafruit-neo-trinkey/arduino-ide-setup) or 
+[Trinket M0](https://learn.adafruit.com/adafruit-trinket-m0-circuitpython-arduino/arduino-ide-setup)
+
 3. Load the a1plus.ino file into the Arduino IDE (or whatever arduino IDE you use).
 4. Configure the IDE to use your board and the appropriate USB serial port.
 6. For best results set the compiler optimzations for "Fastest (-Ofast)" or "Here be dragons..."
@@ -71,13 +74,14 @@ You may notice the LEDs on the board changing color. For lack of anything better
 1. **All text is uppercase**.
 2. **Backspace does not work** (except in EhBasic). The original Apple I keyboard did not have a backspace key and Woz used the uderscore key to function as an old style "RUBOUT". You can essentially erase characters by typing the underscore which will show on the screen but it cancels the previous character.
 3. The usual Apple I cursor is the "at sign", i.e. "@". However, the cursor is usually handled by the terminal emulator. So one difference from a real Apple I is that you won't see the "@" cursor, and will see whatever cursor your terminal emulator provides. This is only really an issue when operating in WozMon, since it has not command line prompt and if you hit return it may seem like nothing is happening. But if you type in some WozMon commands you should see the expected results.
-4. You can get more information about WozMon and the Apple I in general from the original manual:
+4. When you run a built-in program, the ROM required for that program is switched in. When you exit the program you'll drop back to this new ROM environment. Currently all the programs run in the WozMon/Integer Basic ROM.
+5. You can get more information about WozMon and the Apple I in general from the original manual:
 [Apple-1 Operation Manual](http://s3data.computerhistory.org/brochures/apple.applei.1976.102646518.pdf)
-5. The original Integer Basic is described in this manual:
+6. The original Integer Basic is described in this manual:
 [Apple-1 BASIC Manual](https://www.applefritter.com/files/basicman.pdf)
 
 **TIPS:** 
-1. You can copy and paste code into the system and it will behave as if you typed it in. This works for BASIC programs as well as properly formatted hex data to enter into WozMon. Depending on your setup, your board may be able to catch up. If you have problems with this, many terminal emulators have settings to let you specify a per character and per line delay. You can use these to slow down the paste operation so that it does not overrun the inpute buffer of the board.
+1. You can copy and paste code into the system and it will behave as if you typed it in. This works for BASIC programs as well as properly formatted hex data to enter into WozMon. Depending on your setup, your board may be able to keep up. If you have problems with this, many terminal emulators have settings to let you specify a per character and per line delay. You can use these to slow down the paste operation so that it does not overrun the input buffer of the board.
 2. The code has very few dependencies on the board type. If you want to try this on another Arduino-style system you simply need to modify as follows:<br>
 a. Change the memory size in cpu.c as appopriate for your board<br>
 b. Implement the appropriate LED's if any in leds.cpp. However, you can just ignore this if you don't care about the LED's since I check for the two boards I implemented and essentially make the led calls do nothing if it isn't the correct board.<br>
