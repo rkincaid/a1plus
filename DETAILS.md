@@ -10,6 +10,18 @@ website for instructions for your board.
 8. Use a terminal emulator like Putty, TerraTerm or minicom to access the board, type commands in, and
 get a response back.
 
+### Terminal Setup ###
+
+The code as provided sets the baud rate for USB Serial to 9600.  You should set your terminal program
+to the same. You can change this in a1plus.ino. Look for Serial.begin(9600). 
+
+On my system I did not need to have the terminal program add line feeds, carriage returns or do local echo.
+Your mileage may vary. Adjust your terminal program as needed.
+
+**IMPORTANT:** Some of the built-in programs depend on wrapping text at the 40 columns provided by the
+real Apple I hardware. For these programs be sure to have your terminal window sized such that it is 40
+characters wide, and 24 lines.
+
 ### Using a1plus ###
 
 The system emulates an Apple I with a number of extra features thrown in. The code initially lands
