@@ -11,7 +11,8 @@ A1plus includes a custom command processor that allows switching between three d
 
 You can have an Apple I (sort of) on your keychain! :smiley:
 
-![](https://user-images.githubusercontent.com/7751235/120817139-4b602580-c506-11eb-929c-2dcdd13d38c4.mp4)
+![](https://user-images.githubusercontent.com/7751235/120817139-4b602580-c506-11eb-929c-2dcdd13d38c4.mp4)<BR>
+(if the video isn't showing automatically click here: [video](https://user-images.githubusercontent.com/7751235/120817139-4b602580-c506-11eb-929c-2dcdd13d38c4.mp4))
 
 Here are the boards if you are interested:
 
