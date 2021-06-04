@@ -22,7 +22,7 @@ https://github.com/whscullin/apple1js
 Included programs:
 
 **30th Anniversary**<BR>
-Original ource unknown, Apple?<BR>
+Original source unknown, Apple?<BR>
 As posted by Dave Schmenk:<BR>
 https://www.applefritter.com/node/24600#comment-60100
   
