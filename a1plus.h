@@ -8,19 +8,15 @@
  * CPU routines
  */
 extern int BASICID;
-extern void setpc(uint16_t addr);
-extern void help();
 extern uint8_t process_cmd(uint8_t curkey);
 
 extern "C" {
-void run6502(uint16_t address);
-void write6502(uint16_t address, uint8_t value);
-uint16_t getpc();
-uint8_t getop();
-void exec6502(int32_t tickcount);
-void reset6502();
-void serout(uint8_t val);
-void setrom(int id);
+  void setpc(uint16_t address);
+  void write6502(uint16_t address, uint8_t value);
+  void exec6502(int32_t tickcount);
+  void reset6502();
+  void serout(uint8_t val);
+  void setrom(int id);
 }
 
 /*

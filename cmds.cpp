@@ -142,7 +142,7 @@ void loadprog(proginfo prog) {
   }
   clearscreen();
   if (prog_addr != 0xFFFF)
-    run6502(prog_addr);
+    setpc(prog_addr);
 }
 
 /*
