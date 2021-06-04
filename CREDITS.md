@@ -22,8 +22,10 @@ https://github.com/whscullin/apple1js
 Included programs:
 
 **30th Anniversary**<BR>
-Source unknown, Apple?
-
+Original ource unknown, Apple?<BR>
+As posted by Dave Schmenk:<BR>
+https://www.applefritter.com/node/24600#comment-60100
+  
 **Fig-Forth**<BR>
 W. F. Ragsdale https://www.applefritter.com/node/4166
 
