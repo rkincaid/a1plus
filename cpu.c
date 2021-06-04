@@ -6,18 +6,12 @@
 // mechanisms to switch ROMs. Also set memory size
 // to match available RAM on SAMD21 M0.
 // See also: http://rubbermallet.org/fake6502.c (c) 2011
-// CAUTION: the current version may have problems with BCD math
+// Also includes fixed BCD support by Mike B.
+// http://forum.6502.org/viewtopic.php?p=37758#p37758
 //////////////////////////////////////////////////////////////////
-#include <stdint.h>
 #include <avr/pgmspace.h>
 #include "roms.h"
 
-extern void printhex(uint16_t val);
-extern void serout(uint8_t value);
-extern void time();
-
-#define uchar unsigned char
-#define NULL (void *) 0
 // write to D020 switches between basic = 0 or assembler != 0
 
 uint8_t BASICID = 0; //0=integer basic; 1=applesoft lite 2=EhBasic
@@ -30,7 +24,7 @@ uint8_t BASICID = 0; //0=integer basic; 1=applesoft lite 2=EhBasic
 //#define RAM_SIZE 1536 //Pro 328
 //#define RAM_SIZE 4096 //Mega 1280/2560
 //#define RAM_SIZE 32768 //Duepo
-#define RAM_SIZE 18432 //M0 Trinket
+#define RAM_SIZE 18432 //SAMD21, Trinket M0, Neo Trinket
 
 //6502 defines
 //#define UNDOCUMENTED //when this is defined, undocumented opcodes are handled.
@@ -272,7 +266,7 @@ void putvalue(uint16_t saveval) {
 
 
 //instruction handler functions
-void adc() {
+void adcx() {
     value = getvalue();
     result = (uint16_t)a + value + (uint16_t)(cpustatus & FLAG_CARRY);
    
@@ -299,6 +293,24 @@ void adc() {
    
     saveaccum(result);
 }
+
+static void adc() {
+    value = getvalue();
+    result = (uint16_t)a + value + (uint16_t)(cpustatus & FLAG_CARRY);
+
+    zerocalc(result);
+    overflowcalc(result, a, value);
+    signcalc(result);
+
+    #ifndef NES_CPU
+    if (cpustatus & FLAG_DECIMAL)       /* detect and apply BCD nybble carries */
+        result += ((((result + 0x66) ^ (uint16_t)a ^ value) >> 3) & 0x22) * 3;
+    #endif
+
+    carrycalc(result);
+    saveaccum(result);
+}
+
 
 void op_and() {
     value = getvalue();
@@ -627,7 +639,7 @@ void rts() {
     pc = value + 1;
 }
 
-void sbc() {
+void sbcx() {
     value = getvalue() ^ 0x00FF;
     result = (uint16_t)a + value + (uint16_t)(cpustatus & FLAG_CARRY);
    
@@ -656,6 +668,28 @@ void sbc() {
     saveaccum(result);
 }
 
+void sbc() {
+    value = getvalue() ^ 0x00FF;     /* ones complement */
+
+    #ifndef NES_CPU
+    if (cpustatus & FLAG_DECIMAL)       /* use nines complement for BCD */
+        value -= 0x0066;
+    #endif
+
+    result = (uint16_t)a + value + (uint16_t)(cpustatus & FLAG_CARRY);
+   
+    zerocalc(result);
+    overflowcalc(result, a, value);
+    signcalc(result);
+
+    #ifndef NES_CPU
+    if (cpustatus & FLAG_DECIMAL)       /* detect and apply BCD nybble carries */
+        result += ((((result + 0x66) ^ (uint16_t)a ^ value) >> 3) & 0x22) * 3;
+    #endif
+   
+    carrycalc(result);
+    saveaccum(result);
+}
 void sec() {
     setcarry();
 }
