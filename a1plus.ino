@@ -2,10 +2,11 @@
 // 6/2021 R. Kincaid
 // Emulator based on the arduino_6502 project from miker00lz (Mike Chambers)
 // Link: http://forum.arduino.cc/index.php?topic=193216.0
+// See also: http://rubbermallet.org/fake6502.c (c) 2011
+// BCD math routines from Mike B.
+// http://forum.6502.org/viewtopic.php?p=37758#p37758
 // apple 1 roms are (c) Steve Wozniak / Apple Inc. Status is Freeware
 // according to: http://www.callapple.org/soft/ap1/emul.html
-// See also: http://rubbermallet.org/fake6502.c (c) 2011
-// CAUTION: the current version may have problems with BCD math
 //////////////////////////////////////////////////////////////////
 
 #include "a1plus.h"
