@@ -1,7 +1,8 @@
 ### Building a1plus ###
 
 Building the system is pretty straightforward. You need to make sure to do the following:
-1. Install the necessary board definitions for the Trinket M0 or Neo Trinket. Check the Adafruit
+1. Clone or download the repo.
+2. Install the necessary board definitions for the Trinket M0 or Neo Trinket. Check the Adafruit
 website for instructions for your board.
 3. Load the a1plus.ino file into the Arduino IDE (or whatever arduino IDE you use).
 4. Configure the IDE to use your board and the appropriate USB serial port.
