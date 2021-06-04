@@ -30,7 +30,7 @@ https://www.applefritter.com/node/24600#comment-60100
 W. F. Ragsdale https://www.applefritter.com/node/4166
 
 **Microchess**<BR>
-Peter Jennigs http://www.benlo.com/microchess/index.html
+Peter Jennings http://www.benlo.com/microchess/index.html
 
 **21**<BR>
 https://www.callapple.org/soft/ap1/games.html
