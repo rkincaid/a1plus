@@ -21,28 +21,31 @@ https://github.com/whscullin/apple1js
 
 Included programs:
 
-30th Anniversary
+**30th Anniversary**<BR>
 Source unknown, Apple?
 
-Fig-Forth<BR>
+**Fig-Forth**<BR>
 W. F. Ragsdale https://www.applefritter.com/node/4166
 
-Microchess<BR>
+**Microchess**<BR>
 Peter Jennigs http://www.benlo.com/microchess/index.html
 
-21<BR>
+**21**<BR>
 https://www.callapple.org/soft/ap1/games.html
 
-Life<BR>
+**Life**<BR>
 https://www.callapple.org/soft/ap1/games.html
 
-Lunar Lander<BR>
-
-Star Trek<BR>
+**Lunar Lander**<BR>
+Originally from David Ahl's 101 Basic Computer Games<BR>
+https://www.applefritter.com/content/8k-apple-i-ascii-graphics-lunar-lander-aci-audio-hack<BR>
+(modified to remove the audio hack)<BR>
+  
+**Star Trek**<BR>
 Larry Nelson https://www.callapple.org/soft/ap1/games.html
 
-Little Tower<BR>
+**Little Tower**<BR>
 Arnaud Verhille  https://www.applefritter.com/content/little-tower-02
 
-15 Puzzle<BR>
+**15 Puzzle**<BR>
 https://www.callapple.org/soft/ap1/games.html
