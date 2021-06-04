@@ -1,5 +1,5 @@
 # a1plus
-A1plus is a multi-basic implementation of an Apple I emulator that runs  on an Adafruit Trinket M0 or Neo Trinkey. An Apple I PLUS some extras.
+A1plus is a multi-basic implementation of an Apple I emulator that runs  on an Adafruit Trinket M0 or Neo Trinkey. It's an Apple I PLUS some extras.
 
 NOTE: See [DETAILS.md](DETAILS.md) for information about compiling the program, terminal setup and operation.
 
