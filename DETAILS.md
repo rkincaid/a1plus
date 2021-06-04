@@ -60,6 +60,8 @@ You may notice the LEDs on the board changing color. For lack of anything better
 3. The usual Apple I cursor is the "at sign", i.e. "@". However, the cursor is usually handled by the terminal emulator. So one difference from a real Apple I is that you won't see the "@" cursor, and will see whatever cursor your terminal emulator provides. This is only really an issue when operating in WozMon, since it has not command line prompt and if you hit return it may seem like nothing is happening. But if you type in some WozMon commands you should see the expected results.
 4. You can get more information about WozMon and the Apple I in general from the original manual:
 [Apple-1 Operation Manual](http://s3data.computerhistory.org/brochures/apple.applei.1976.102646518.pdf)
+5. The original Integer Basic is described in this manual:
+[Apple-1 BASIC Manual](https://www.applefritter.com/files/basicman.pdf)
 
 **TIPS:** 
 1. You can copy and paste code into the system and it will behave as if you typed it in. This works for BASIC programs as well as properly formatted hex data to enter into WozMon. Depending on your setup, your board may be able to catch up. If you have problems with this, many terminal emulators have settings to let you specify a per character and per line delay. You can use these to slow down the paste operation so that it does not overrun the inpute buffer of the board.
