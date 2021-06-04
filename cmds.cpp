@@ -141,6 +141,11 @@ void loadprog(proginfo prog) {
     ++pptr;
   }
   clearscreen();
+  // set rom to correspond to code requirements
+  setrom(prog.romid);
+  // if prog_addr == 0xFFFF then don't try to start it
+  // this allows the code definition in programs.cpp
+  // to allow user warmstart instead (but not currently used)
   if (prog_addr != 0xFFFF)
     setpc(prog_addr);
 }
