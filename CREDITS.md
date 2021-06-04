@@ -1,6 +1,8 @@
 ### Credits and Attributions ###
 This project was really about integrating a lot of existing code from various sources. I want to acknowledge this work and
-the original authors. 
+the original authors (where known). 
+
+Thanks to 6502.org for the great resources provided there.
 
 The emulator and EhBasic are based on the arduino_6502 project from miker00lz (Mike Chambers) and declared public domain
 http://forum.arduino.cc/index.php?topic=193216.0
