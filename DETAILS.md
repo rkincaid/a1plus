@@ -54,14 +54,17 @@ Simply, enter the number you chose and type enter/return. The program should the
 
 You may notice the LEDs on the board changing color. For lack of anything better to do, I wrote some code (in leds.cpp) that changes the color to indicate which flavor of BASIC or WozMon you are currently in. It doesn't change if you just do CALL-256 or E000R, but if you use the command process to essentially switch ROM's it will change color to indicate that.
 
-**IMPORTANT NOTES:** Since both Integer Basic and Applesoft Lite operate using the Apple I monitor (aka WozMon), it behaves very much like a real Apple I. So this has the following limitations:
+**IMPORTANT NOTES:** Since both Integer Basic and Applesoft Lite operate using the Apple I monitor (aka WozMon), it behaves very much like a real Apple I. This has the following limitations:
 1. **All text is uppercase**.
 2. **Backspace does not work** (except in EhBasic). The original Apple I keyboard did not have a backspace key and Woz used the uderscore key to function as an old style "RUBOUT". You can essentially erase characters by typing the underscore which will show on the screen but it cancels the previous character.
+3. The usual Apple I cursor is the "at sign", i.e. "@". However, the cursor is usually handled by the terminal emulator. So one difference from a real Apple I is that you won't see the "@" cursor, and will see whatever cursor your terminal emulator provides. This is only really an issue when operating in WozMon, since it has not command line prompt and if you hit return it may seem like nothing is happening. But if you type in some WozMon commands you should see the expected results.
+4. You can get more information about WozMon and the Apple I in general from the original manual:
+[Apple-1 Operation Manual](http://s3data.computerhistory.org/brochures/apple.applei.1976.102646518.pdf)
 
 **TIPS:** 
 1. You can copy and paste code into the system and it will behave as if you typed it in. This works for BASIC programs as well as properly formatted hex data to enter into WozMon. Depending on your setup, your board may be able to catch up. If you have problems with this, many terminal emulators have settings to let you specify a per character and per line delay. You can use these to slow down the paste operation so that it does not overrun the inpute buffer of the board.
-2. The code has very few dependencies on the board. If you want to try this on another Arduino-style system you simply need to modify as follows:
-a. Change the memory size in cpu.c as appopriate for your board
-b. Implement the appropriate LED's if any in leds.cpp. However, you can just ignore this if you don't care about the LED's since I check for the two boards I implemented and essentially make the led calls do nothing if it isn't the correct board.
-c. If you have less program space than the SAMD21 you may need to remove some of the built-in program code and maybe even remove one or more of the ROM's.
+2. The code has very few dependencies on the board type. If you want to try this on another Arduino-style system you simply need to modify as follows:<br>
+a. Change the memory size in cpu.c as appopriate for your board<br>
+b. Implement the appropriate LED's if any in leds.cpp. However, you can just ignore this if you don't care about the LED's since I check for the two boards I implemented and essentially make the led calls do nothing if it isn't the correct board.<br>
+c. If you have less program space than the SAMD21 you may need to remove some of the built-in program code and maybe even remove one or more of the ROM's.<br>
 
