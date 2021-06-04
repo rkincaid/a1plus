@@ -38,8 +38,6 @@
  */
 #include "a1plus.h"
 
-
-
 /*
  * 30th anniversary program, from Apple?
  */
