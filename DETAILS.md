@@ -58,7 +58,7 @@ You may notice the LEDs on the board changing color. For lack of anything better
 1. **All text is uppercase**.
 2. **Backspace does not work** (except in EhBasic). The original Apple I keyboard did not have a backspace key and Woz used the uderscore key to function as an old style "RUBOUT". You can essentially erase characters by typing the underscore which will show on the screen but it cancels the previous character.
 
-**TIPS:*** 
+**TIPS:** 
 1. You can copy and paste code into the system and it will behave as if you typed it in. This works for BASIC programs as well as properly formatted hex data to enter into WozMon. Depending on your setup, your board may be able to catch up. If you have problems with this, many terminal emulators have settings to let you specify a per character and per line delay. You can use these to slow down the paste operation so that it does not overrun the inpute buffer of the board.
 2. The code has very few dependencies on the board. If you want to try this on another Arduino-style system you simply need to modify as follows:
 a. Change the memory size in cpu.c as appopriate for your board
