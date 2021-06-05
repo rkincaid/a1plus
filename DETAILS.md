@@ -84,6 +84,6 @@ You may notice the LEDs on the board changing color. For lack of anything better
 1. You can copy and paste code into the system and it will behave as if you typed it in. This works for BASIC programs as well as properly formatted hex data to enter into WozMon. Depending on your setup, your board may be able to keep up. If you have problems with this, many terminal emulators have settings to let you specify a per character and per line delay. You can use these to slow down the paste operation so that it does not overrun the input buffer of the board.
 2. The code has very few dependencies on the board type. If you want to try this on another Arduino-style system you simply need to modify as follows:<br>
 a. Change the memory size in cpu.c as appopriate for your board<br>
-b. Implement the appropriate LED's if any in leds.cpp. However, you can just ignore this if you don't care about the LED's since I check for the two boards I implemented and essentially make the led calls do nothing if it isn't the correct board.<br>
+b. Implement the appropriate LED's (if any) in leds.cpp. However, you can just ignore this if you don't care about the LED's since I check for the two boards I implemented and essentially make the led calls do nothing if it isn't the correct board.<br>
 c. If you have less program space than the SAMD21 you may need to remove some of the built-in program code and maybe even remove one or more of the ROM's.<br>
 
