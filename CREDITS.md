@@ -16,6 +16,8 @@ Status is Freeware according to: http://www.callapple.org/soft/ap1/emul.html
 
 EhBasic is the work of Lee Davison: http://retro.hansotten.nl/6502-sbc/lee-davison-web-site/
 
+Applesoft-Lite: https://cowgod.org/replica1/applesoft/
+
 Apple1js by Will Scullin provided inspiration for packaging built-in programs as part of the system. 
 My implemenation is different, but inspired
 by this excellent on-line emulator. It was also very useful to compare output when debugging a1plus.
